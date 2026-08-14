@@ -22,18 +22,9 @@ Then open the URL Vite prints. No config and no `.env` — the demo user and a
 user-scoped JWT are hardcoded at the top of [`src/main.tsx`](src/main.tsx), and the
 inbox already has messages in it. Click any row to see the full message object.
 
-The JWT expires **2026-11-12**. To point at your own workspace, replace `USER_ID`
-and `JWT`:
-
-```bash
-curl -X POST https://api.courier.com/auth/issue-token \
-  -H "Authorization: Bearer $COURIER_API_KEY" \
-  -H "Content-Type: application/json" \
-  -d '{"scope":"user_id:YOUR_USER read:messages inbox:read:messages inbox:write:events","expires_in":"90 days"}'
-```
-
-Hardcoding is deliberate so this runs on clone, and it is not how to ship: mint the
-JWT on your backend instead, and never put a Courier API key in client code.
+The JWT expires **2026-11-12**. Hardcoding it is deliberate so this runs on clone,
+and it is not how to ship: mint the JWT on your backend instead, and never put a
+Courier API key in client code.
 
 ## Other scripts
 
