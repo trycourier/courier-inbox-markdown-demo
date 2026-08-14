@@ -4,6 +4,8 @@ A one-file React app: a full-screen `<CourierInbox>` whose rows are rendered by 
 custom list item that treats each message's `title` and `preview` as markdown.
 Everything is in [`src/main.tsx`](src/main.tsx).
 
+<img src="screenshot.png" alt="Courier Inbox rows with markdown-rendered titles and previews" width="620">
+
 Upgrading to the latest `markdown-to-jsx` (`^9`) solves the `snake_case` problem.
 CommonMark says an underscore can't open or close emphasis inside a word, which is
 what keeps identifiers intact — older versions didn't implement that rule, so a
